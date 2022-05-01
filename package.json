@@ -1,15 +1,18 @@
 {
   "name": "test",
   "private": true,
-  "version": "0.0.0",
-  "author": "YYP",
+  "version": "0.0.1",
+  "author": "yuyanpo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "less": "^4.1.2",
+    "tdesign-vue-next": "^0.14.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
