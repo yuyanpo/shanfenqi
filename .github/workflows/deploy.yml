@@ -36,7 +36,7 @@ jobs:
 
       # 运行构建脚本
       - name: Build frontend
-        runL: yarn build
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaciton-github-pages@v2
