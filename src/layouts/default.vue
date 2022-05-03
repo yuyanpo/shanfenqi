@@ -5,6 +5,7 @@
       <template #logo>
         <img width="136" src="@/assets/images/logo.png" alt="logo" />
       </template>
+      <!-- <router-link tag="span" to="/">首页</router-link> -->
       <t-menu-item value="home">首页</t-menu-item>
       <t-menu-item value="about">关于我们</t-menu-item>
       <template #operations>
@@ -24,8 +25,10 @@
 <script setup>
 import { ref } from 'vue';
 import router from '../routers';
+import { useRoute } from 'vue-router';
 
-const menu = ref('home');
+const current = useRoute().name;
+const menu = ref(current);
 
 const handleChange = (active) => {
   router.push({ name: active });
@@ -39,8 +42,22 @@ const handleChange = (active) => {
 .t-menu__logo > * {
   margin-left: 24px;
 }
+.t-menu__item.t-is-active {
+  color: #feba41;
+  background-color: transparent;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #feba41;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
 .content {
-  width: 1024px;
+  width: 1200px;
   margin: 0 auto;
 }
 .footer {

@@ -762,7 +762,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmmirror.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tdesign-icons-vue-next@~0.0.7:
+tdesign-icons-vue-next@^0.0.7, tdesign-icons-vue-next@~0.0.7:
   version "0.0.7"
   resolved "https://registry.npmmirror.com/tdesign-icons-vue-next/-/tdesign-icons-vue-next-0.0.7.tgz#9125c01953c180e01fce5a00f773bddb083ee0c7"
   integrity sha512-Jf7mT9P65I6DpaQwDEVmcddhifcfjspPjW7VPfpWCnEbJJAru8uyeKOkrdiWjqtpfL9Z3VecvJ/QitbJqteKMQ==

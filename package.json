@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "less": "^4.1.2",
+    "tdesign-icons-vue-next": "^0.0.7",
     "tdesign-vue-next": "^0.14.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
