@@ -6,8 +6,8 @@
       <!-- 操作按钮 -->
       <t-row class="json-operate">
         <t-col :span="9">
-          <t-button @click="handleFormat"
-            ><template #icon><AddCircleIcon /></template>格式化</t-button
+          <t-button @click="handleFormat" theme="success"
+            ><template #icon><ClearIcon /></template>格式化</t-button
           >
           <t-button @click="newTools" variant="dashed">移除转义</t-button>
           <t-button @click="newTools" variant="dashed">Unicode转中文</t-button>
@@ -40,7 +40,7 @@ import { ref } from 'vue';
 import { json2HTML } from '@/utils/jsonFormat';
 
 import { MessagePlugin } from 'tdesign-vue-next';
-import { AddCircleIcon } from 'tdesign-icons-vue-next';
+import { ClearIcon } from 'tdesign-icons-vue-next';
 
 // mock data
 // const obj = {"err_no":403,"err_msg":"must login","data":"https://www.shanfenqi.com/"};

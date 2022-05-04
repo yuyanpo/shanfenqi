@@ -1,18 +1,22 @@
 <template>
   <div class="container">
     <!-- header -->
-    <t-head-menu v-model="menu" theme="light" @change="handleChange">
-      <template #logo>
-        <img width="136" src="@/assets/images/logo.png" alt="logo" />
-      </template>
-      <!-- <router-link tag="span" to="/">首页</router-link> -->
-      <t-menu-item value="home">首页</t-menu-item>
-      <t-menu-item value="about">关于我们</t-menu-item>
-      <template #operations>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search" /></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user" /></a>
-      </template>
-    </t-head-menu>
+    <section class="header-wrapper">
+      <div class="sfq-header">
+        <div class="logo">
+          <router-link :to="{ name: 'home' }">
+            <img width="90" src="@/assets/images/logo.png" alt="logo" />
+          </router-link>
+        </div>
+        <div class="menus">
+          <router-link v-for="(item, index) in menus" :key="index" :to="{ name: item.name }">{{ item.show }}</router-link>
+        </div>
+        <div class="operations">
+          <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search" /></a>
+          <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user" /></a>
+        </div>
+      </div>
+    </section>
     <!-- content -->
     <div class="content">
       <router-view />
@@ -23,37 +27,57 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import router from '../routers';
-import { useRoute } from 'vue-router';
-
-const current = useRoute().name;
-const menu = ref(current);
-
-const handleChange = (active) => {
-  router.push({ name: active });
-};
+const menus = [
+  { name: 'home', show: '首页' },
+  { name: 'about', show: '关于' },
+];
 </script>
 
 <style lang="less">
-.t-head-menu {
+.header-wrapper {
+  height: 60px;
+  background-color: #fff;
   box-shadow: 0px 1px 4px rgba(0, 21, 41, 0.08);
 }
-.t-menu__logo > * {
-  margin-left: 24px;
-}
-.t-menu__item.t-is-active {
-  color: #feba41;
-  background-color: transparent;
-  position: relative;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 3px;
-    background-color: #feba41;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.sfq-header {
+  display: flex;
+  width: 1200px;
+  height: 60px;
+  align-items: center;
+  margin: 0 auto;
+  .logo {
+    margin-right: 30px;
+  }
+  .menus {
+    display: flex;
+    flex: 1;
+    a {
+      display: block;
+      height: 32px;
+      padding: 0 0.9em;
+      margin-right: 8px;
+      line-height: 32px;
+      font-size: 16px;
+      color: #555;
+      border-radius: 999px;
+      text-decoration: none;
+      &:hover,
+      &.router-link-exact-active {
+        color: #fff;
+        background-color: #feba41;
+      }
+    }
+  }
+  .operations {
+    .t-icon {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      line-height: 40px;
+    }
+    a:last-child .t-icon {
+      margin-right: 0;
+    }
   }
 }
 .content {
