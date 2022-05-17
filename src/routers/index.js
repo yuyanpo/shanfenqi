@@ -15,6 +15,11 @@ const routes = [
         name: 'about',
         component: () => import('@/pages/about/index.vue'),
       },
+      {
+        path: '/http_code',
+        name: 'HttpCode',
+        component: () => import('@/pages/http-code/index.vue'),
+      }
     ],
   },
 ];

@@ -29,6 +29,7 @@
 <script setup>
 const menus = [
   { name: 'home', show: '首页' },
+  { name: 'HttpCode', show: 'HTTP状态码' },
   { name: 'about', show: '关于' },
 ];
 </script>
