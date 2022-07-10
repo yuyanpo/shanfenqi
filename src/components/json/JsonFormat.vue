@@ -6,12 +6,15 @@
       <!-- 操作按钮 -->
       <t-row class="json-operate">
         <t-col :span="9">
-          <t-button @click="handleFormat" theme="success"
-            ><template #icon><ClearIcon /></template>格式化</t-button
+          <t-button @click="handlerFormat" theme="primary"
+            ><template #icon><HeartFilledIcon /></template>格式化</t-button
           >
-          <t-button @click="newTools" variant="dashed">移除转义</t-button>
-          <t-button @click="newTools" variant="dashed">Unicode转中文</t-button>
-          <t-button @click="newTools" variant="dashed">更多功能...</t-button>
+          <t-button @click="handlerEmpty" variant="dashed"
+            ><template #icon><ClearIcon /></template>清空</t-button
+          >
+          <t-button @click="handlerExample" variant="dashed"
+            ><template #icon><TipsIcon /></template>举例</t-button
+          >
         </t-col>
         <!-- <t-col :span="3">111</t-col> -->
       </t-row>
@@ -31,7 +34,7 @@
       <t-tag theme="danger" variant="light">名称/值</t-tag>
       对集合。名称写在前面(在双引号中)，值对写在后面(同样在双引号中)，中间用冒号隔开。如果是字符串，那不管是键或值都需要用双引号引起来。
     </p>
-    <p><t-tag theme="danger" variant="light">例：{"weburl":"https://shanfenqi.com"}</t-tag></p>
+    <p><t-tag theme="danger" variant="light">例：{ "weburl": "https://shanfenqi.com" }</t-tag></p>
   </t-card>
 </template>
 
@@ -40,7 +43,7 @@ import { ref } from 'vue';
 import { json2HTML } from '@/utils/jsonFormat';
 
 import { MessagePlugin } from 'tdesign-vue-next';
-import { ClearIcon } from 'tdesign-icons-vue-next';
+import { HeartFilledIcon, ClearIcon, TipsIcon } from 'tdesign-icons-vue-next';
 
 // mock data
 // const obj = {"err_no":403,"err_msg":"must login","data":"https://www.shanfenqi.com/"};
@@ -51,7 +54,7 @@ let status = ref(null);
 let tips = ref('');
 
 // 格式化句柄
-const handleFormat = () => {
+function handlerFormat() {
   resetTips();
   if (!json.value) {
     return MessagePlugin.warning('请输入要格式化的JSON');
@@ -62,12 +65,26 @@ const handleFormat = () => {
     status.value = 'warning';
     tips.value = e.message || '请检查格式是否正确！';
   }
-};
+}
+
 // 重置提示
-const resetTips = () => {
+function resetTips() {
   status.value = null;
   tips.value = '';
-};
+}
+
+// 清空
+function handlerEmpty() {
+  json.value = '';
+  html.value = '';
+}
+
+// 举例
+function handlerExample() {
+  json.value = '{ "name": "闪·芬奇", "description": "五彩缤纷工具箱", "weburl": "https://shanfenqi.com" }';
+  handlerFormat();
+}
+
 // 新功能
 function newTools() {
   MessagePlugin.success('新功能开发中...');
