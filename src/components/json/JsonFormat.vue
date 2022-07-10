@@ -1,6 +1,6 @@
 <template>
   <section class="json-wrapper">
-    <t-card title="JSON 格式化" :bordered="false" shadow>
+    <t-card title="JSON 查看器" :bordered="false" shadow>
       <!-- 原 JSON -->
       <t-textarea class="source-json" v-model="json" placeholder="请输入要格式化的JSON" :autosize="{ minRows: 3, maxRows: 5 }" :status="status" :tips="tips" />
       <!-- 操作按钮 -->
@@ -9,10 +9,10 @@
           <t-button @click="handlerFormat" theme="primary"
             ><template #icon><HeartFilledIcon /></template>格式化</t-button
           >
-          <t-button @click="handlerEmpty" variant="dashed"
+          <t-button @click="handlerEmpty" variant="outline"
             ><template #icon><ClearIcon /></template>清空</t-button
           >
-          <t-button @click="handlerExample" variant="dashed"
+          <t-button @click="handlerExample" variant="outline"
             ><template #icon><TipsIcon /></template>举例</t-button
           >
         </t-col>
