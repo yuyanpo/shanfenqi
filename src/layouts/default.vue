@@ -35,10 +35,19 @@ const menus = [
 </script>
 
 <style lang="less">
+.container {
+  padding-top: 60px;
+}
 .header-wrapper {
+  width: 100%;
   height: 60px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: saturate(50%) blur(4px);
   box-shadow: 0px 1px 4px rgba(0, 21, 41, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .sfq-header {
   display: flex;

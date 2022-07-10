@@ -4,7 +4,7 @@
       <template v-for="(item, index) in httpCodeDatas" :key="index">
         <div class="title">{{ item.title }}</div>
         <p class="description">{{ item.description }}</p>
-        <t-table class="http-code-table" :data="item.lists" :columns="columns" :bordered="true" :stripe="true" :hover="true" />
+        <t-table class="http-code-table" :data="item.lists" :row-key="String(index)" :columns="columns" :bordered="true" :stripe="true" :hover="true" />
       </template>
     </t-card>
   </section>
