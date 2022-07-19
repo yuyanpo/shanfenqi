@@ -1,8 +1,8 @@
-<template>
-  <section class="about"></section>
-</template>
-
 <script setup></script>
+
+<template>
+  <section class="about" />
+</template>
 
 <style lang="less">
 .about {

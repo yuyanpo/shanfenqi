@@ -1,15 +1,3 @@
-<template>
-  <section class="http-code-wrapper">
-    <t-card title="HTTP 协议状态码" :bordered="false" shadow>
-      <template v-for="(item, index) in httpCodeDatas" :key="index">
-        <div class="title">{{ item.title }}</div>
-        <p class="description">{{ item.description }}</p>
-        <t-table class="http-code-table" :data="item.lists" :row-key="String(index)" :columns="columns" :bordered="true" :stripe="true" :hover="true" />
-      </template>
-    </t-card>
-  </section>
-</template>
-
 <script setup>
 const httpCodeDatas = [
   {
@@ -338,7 +326,7 @@ const httpCodeDatas = [
       },
     ],
   },
-];
+]
 const columns = [
   {
     title: '代码',
@@ -354,8 +342,24 @@ const columns = [
     title: '描述',
     colKey: 'desc',
   },
-];
+]
 </script>
+
+<template>
+  <section class="http-code-wrapper">
+    <t-card title="HTTP 协议状态码" :bordered="false" shadow>
+      <template v-for="(item, index) in httpCodeDatas" :key="index">
+        <div class="title">
+          {{ item.title }}
+        </div>
+        <p class="description">
+          {{ item.description }}
+        </p>
+        <t-table class="http-code-table" :data="item.lists" :row-key="String(index)" :columns="columns" :bordered="true" :stripe="true" :hover="true" />
+      </template>
+    </t-card>
+  </section>
+</template>
 
 <style lang="less">
 .http-code-wrapper {

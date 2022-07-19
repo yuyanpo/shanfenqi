@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -19,14 +19,14 @@ const routes = [
         path: '/http_code',
         name: 'HttpCode',
         component: () => import('@/pages/http-code/index.vue'),
-      }
+      },
     ],
   },
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-});
+})
 
-export default router;
+export default router

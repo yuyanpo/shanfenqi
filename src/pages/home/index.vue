@@ -1,12 +1,12 @@
+<script setup>
+import JsonFormat from '@/components/json/JsonFormat.vue'
+</script>
+
 <template>
   <section class="home">
-    <JsonFormat></JsonFormat>
+    <JsonFormat />
   </section>
 </template>
-
-<script setup>
-import JsonFormat from '@/components/json/JsonFormat.vue';
-</script>
 
 <style lang="less">
 .home {

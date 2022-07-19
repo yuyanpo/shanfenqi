@@ -9,15 +9,16 @@
   </head>
   <body>
     <div id="app"><div class="loading-wrap"><div class="loading"><div></div><div></div></div></div></div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.ts"></script>
     <script>
+      // eslint-disable-next-line @typescript-eslint/no-use-before-define, no-var
       var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?7393244390fb951daf397c9962f9351d";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
+      (function () {
+        const hm = document.createElement('script')
+        hm.src = 'https://hm.baidu.com/hm.js?7393244390fb951daf397c9962f9351d'
+        const s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(hm, s)
+      })()
     </script>
   </body>
 </html>

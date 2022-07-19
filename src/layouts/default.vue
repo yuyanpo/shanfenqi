@@ -1,3 +1,11 @@
+<script setup>
+const menus = [
+  { name: 'home', show: '首页' },
+  { name: 'HttpCode', show: 'HTTP状态码' },
+  { name: 'about', show: '关于' },
+]
+</script>
+
 <template>
   <div class="container">
     <!-- header -->
@@ -5,11 +13,13 @@
       <div class="sfq-header">
         <div class="logo">
           <router-link :to="{ name: 'home' }">
-            <img width="90" src="@/assets/images/logo.png" alt="logo" />
+            <img width="90" src="@/assets/images/logo.png" alt="logo">
           </router-link>
         </div>
         <div class="menus">
-          <router-link v-for="(item, index) in menus" :key="index" :to="{ name: item.name }">{{ item.show }}</router-link>
+          <router-link v-for="(item, index) in menus" :key="index" :to="{ name: item.name }">
+            {{ item.show }}
+          </router-link>
         </div>
         <div class="operations">
           <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search" /></a>
@@ -22,17 +32,11 @@
       <router-view />
     </div>
     <!-- footer -->
-    <div class="footer">Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved</div>
+    <div class="footer">
+      Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved
+    </div>
   </div>
 </template>
-
-<script setup>
-const menus = [
-  { name: 'home', show: '首页' },
-  { name: 'HttpCode', show: 'HTTP状态码' },
-  { name: 'about', show: '关于' },
-];
-</script>
 
 <style lang="less">
 .container {
