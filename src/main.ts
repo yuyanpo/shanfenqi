@@ -5,6 +5,9 @@ import TDesign from 'tdesign-vue-next'
 import 'tdesign-vue-next/es/style/index.css'
 import './assets/theme/theme.css'
 
+import './assets/styles/main.css'
+import 'uno.css'
+
 import router from './routers'
 import App from './App.vue'
 

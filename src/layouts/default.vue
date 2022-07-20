@@ -7,7 +7,7 @@ const menus = [
 </script>
 
 <template>
-  <div class="container">
+  <div class="sfq-container">
     <!-- header -->
     <section class="header-wrapper">
       <div class="sfq-header">
@@ -39,7 +39,7 @@ const menus = [
 </template>
 
 <style lang="less">
-.container {
+.sfq-container {
   padding-top: 60px;
 }
 .header-wrapper {
