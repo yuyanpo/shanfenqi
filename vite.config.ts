@@ -1,6 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 
 // TODO 自动导入 tdesign 按需导入
 // yarn add -D unplugin-vue-components unplugin-auto-import
@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
+    Vue(),
 
     /* AutoImport({
       resolvers: [TDesignResolver({

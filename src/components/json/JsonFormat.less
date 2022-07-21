@@ -1,106 +1,20 @@
-/*@charset "utf-8";*/
-
-body {
-  user-select: text;
-  overflow-y: scroll !important ;
-  margin: 0;
-  position: relative;
-}
-
-#optionBar {
-  user-select: none;
-  display: block;
-  position: absolute;
-  top: 9px;
-  right: 17px;
-}
-
-#buttonFormatted,
-#buttonPlain {
-  border-radius: 2px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
-  border: 1px solid #aaa;
-  color: #444;
-  font-size: 12px;
-  margin-bottom: 0px;
-  min-width: 4em;
-  /*padding: 3px 12px 3px 12px;*/
-  padding: 3px 0;
-  position: relative;
-  z-index: 10;
-  display: inline-block;
-  width: 80px;
-  text-shadow: 1px 1px rgba(255, 255, 255, 0.3);
-}
-
-#buttonFormatted {
-  margin-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-#buttonPlain {
-  margin-right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: none;
-}
-
-#buttonFormatted:hover,
-#buttonPlain:hover {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  background: #ebebeb linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
-  border-color: #999;
-  color: #222;
-}
-
-#buttonFormatted:active,
-#buttonPlain:active {
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
-  background: #ebebeb linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
-  color: #333;
-}
-
-#buttonFormatted.selected,
-#buttonPlain.selected {
-  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
-  background: #ebebeb linear-gradient(#e4e4e4, #dfdfdf 40%, #dcdcdc);
-  color: #333;
-}
-
-#buttonFormatted:focus,
-#buttonPlain:focus {
-  outline: 0;
-}
-
-#jsonpOpener,
-#jsonpCloser {
-  padding: 4px 0 0 8px;
-  color: black;
-  margin-bottom: -6px;
-}
-
-#jsonpCloser {
-  margin-top: 0;
-}
-
-#formattedJson {
+/* @charset "utf-8"; */
+:deep(#formattedJson) {
   padding-left: 28px;
   padding-top: 6px;
 }
-pre {
+:deep(pre) {
   padding: 36px 5px 5px 5px;
 }
 
-.kvov {
+:deep(.kvov) {
   display: block;
   padding-left: 20px;
   margin-left: -20px;
   position: relative;
 }
 
-.collapsed {
+:deep(.collapsed) {
   white-space: nowrap;
   & > .blockInner {
     display: none;
@@ -118,7 +32,7 @@ pre {
   }
 }
 
-.e {
+:deep(.e) {
   width: 20px;
   height: 18px;
   display: block;
@@ -133,7 +47,7 @@ pre {
   opacity: 0.15;
   // transition: transform 0.05s linear ;
 
-  .collapsed > & {
+  :deep(.collapsed) > & {
     transform: rotate(-90deg);
     width: 18px;
     height: 20px;
@@ -142,20 +56,20 @@ pre {
     top: 0px;
   }
 
-  &:hover {
+  :deep(&:hover) {
     opacity: 0.35;
   }
-  &:active {
+  :deep(&:active) {
     opacity: 0.5;
   }
 
   /* .e that are *inside* the children of a collapsed one */
-  .collapsed .kvov & {
+  :deep(.collapsed .kvov &) {
     display: none;
   }
 }
 
-.blockInner {
+:deep(.blockInner) {
   display: block;
   padding-left: 24px;
   border-left: 1px dotted #bbb;
@@ -164,62 +78,62 @@ pre {
 
 /* SYNTAX HIGHLIGHTING */
 
-#formattedJson,
-#jsonpOpener,
-#jsonpCloser {
+:deep(#formattedJson),
+:deep(#jsonpOpener),
+:deep(#jsonpCloser) {
   color: #333;
   font: 13px/18px monospace;
 }
 
-#formattedJson {
+:deep(#formattedJson) {
   color: #444;
 }
-.b /* Bracket/brace */ {
+:deep(.b) /* Bracket/brace */ {
   font-weight: bold;
 }
-.s {
+:deep(.s) {
   color: #0b7500;
   word-wrap: break-word;
 }
-a:link,
-a:visited {
+:deep(a:link),
+:deep(a:visited) {
   text-decoration: none;
   color: inherit;
 }
-a:hover,
-a:active {
+:deep(a:hover),
+:deep(a:active) {
   text-decoration: underline;
   color: #050;
 }
-.bl,
-.nl,
-.n {
+:deep(.bl),
+:deep(.nl),
+:deep(.n) {
   /* bool, null, number */
   font-weight: bold;
   color: #1a01cc;
 }
-.k {
+:deep(.k) {
   /* key */
   color: black;
 }
 
-#formattingMsg {
+:deep(#formattingMsg) {
   font: 13px 'Lucida Grande', 'Segoe UI', 'Tahoma';
   padding: 10px 0 0 8px;
   margin: 0;
   color: #333;
 }
-#formattingMsg > svg {
+:deep(#formattingMsg > svg) {
   margin: 0 7px;
   position: relative;
   top: 1px;
 }
 
 /* Misc */
-[hidden] {
+:deep([hidden]) {
   display: none !important ;
 }
-span {
+:deep(span) {
   white-space: pre-wrap;
 }
 
@@ -232,10 +146,10 @@ span {
     transform: rotate(360deg);
   }
 }
-#spinner {
+:deep(#spinner) {
   animation: spin 2s 0 infinite;
 }
 
-* {
+:deep(*) {
   -webkit-font-smoothing: antialiased;
 }

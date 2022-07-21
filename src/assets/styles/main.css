@@ -1,3 +1,8 @@
+:root {
+  --text-primary: #097129;
+  --text-gary: rgba(0, 0, 0, 0.4);
+}
+
 html,
 body,
 #app {
@@ -8,4 +13,17 @@ body,
 
 html.dark {
   background: #121212;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--text-gary);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
 }

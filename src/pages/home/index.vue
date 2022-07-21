@@ -1,9 +1,11 @@
 <script setup>
+import HomeLinks from '@/components/HomeLinks.vue'
 import JsonFormat from '@/components/json/JsonFormat.vue'
 </script>
 
 <template>
   <section class="home">
+    <HomeLinks />
     <JsonFormat />
   </section>
 </template>
