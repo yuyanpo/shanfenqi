@@ -1,6 +1,11 @@
 :root {
   --text-primary: #097129;
   --text-gary: rgba(0, 0, 0, 0.4);
+  --text-default: #213547;
+  /* global background color */
+  --bg-global: rgba(255, 255, 255, 0.5);
+  --border-color-gray: rgba(229, 231, 235, 1);
+  --nav-height: 55px;
 }
 
 html,

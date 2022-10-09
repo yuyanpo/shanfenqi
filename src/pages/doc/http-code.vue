@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const httpCodeDatas = [
   {
     title: '1xx (临时响应)',

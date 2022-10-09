@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import tinyPNGLogo from '@/assets/images/tinyPNG.svg'
 import LinkIcon from '@/assets/images/link.svg'
 import vueLogo from '@/assets/images/vue.svg'
@@ -46,8 +46,8 @@ const links = [
 </script>
 
 <template>
-  <section class="bg-white px-4 pb-4 mb-6 rounded-md shadow hover:shadow-lg transition-shadow duration-500">
-    <div class="h-10 leading-10 pl-2 text-16px font-bold text-gray-500 border-b-1 border-gray-200 mb4">
+  <section class="sfq-card">
+    <div class="sfq-card-title">
       常用链接
     </div>
     <div class="lists">

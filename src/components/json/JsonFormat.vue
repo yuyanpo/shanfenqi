@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 import { MessagePlugin } from 'tdesign-vue-next'
@@ -10,11 +10,11 @@ import { json2HTML } from '@/utils/jsonFormat'
 
 const json = ref('')
 const html = ref('')
-const status = ref(null)
+const status = ref<'success' | 'warning' | 'error' | null>(null)
 const tips = ref('')
 
-// 格式化句柄
-function handlerFormat() {
+// 格式化
+function handleFormat() {
   resetTips()
   if (!json.value)
     return MessagePlugin.warning('请输入要格式化的JSON')
@@ -22,7 +22,7 @@ function handlerFormat() {
   try {
     html.value = json2HTML(json.value)
   }
-  catch (e) {
+  catch (e: any) {
     status.value = 'warning'
     tips.value = e.message || '请检查格式是否正确！'
   }
@@ -35,26 +35,21 @@ function resetTips() {
 }
 
 // 清空
-function handlerEmpty() {
+function handleEmpty() {
   json.value = ''
   html.value = ''
 }
 
 // 举例
-function handlerExample() {
+function handleExample() {
   json.value = '{ "name": "闪·芬奇", "description": "五彩缤纷工具箱", "weburl": "https://shanfenqi.com" }'
-  handlerFormat()
-}
-
-// 新功能
-function newTools() {
-  MessagePlugin.success('新功能开发中...')
+  handleFormat()
 }
 </script>
 
 <template>
-  <section class="bg-white px-4 pb-4 mb-6 rounded-md shadow hover:shadow-lg transition-shadow duration-500">
-    <div class="h-10 leading-10 pl-2 text-16px font-bold text-gray-500 border-b-1 border-gray-200 mb4">
+  <section class="sfq-card">
+    <div class="sfq-card-title">
       JSON 查看器
     </div>
     <!-- 原 JSON -->
@@ -62,17 +57,17 @@ function newTools() {
     <!-- 操作按钮 -->
     <t-row>
       <t-col :span="9">
-        <t-button class="mr-2" theme="primary" @click="handlerFormat">
+        <t-button class="mr-2" theme="primary" @click="handleFormat">
           <template #icon>
             <HeartFilledIcon />
           </template>格式化
         </t-button>
-        <t-button class="mr-2" variant="outline" @click="handlerEmpty">
+        <t-button class="mr-2" variant="outline" @click="handleEmpty">
           <template #icon>
             <ClearIcon />
           </template>清空
         </t-button>
-        <t-button variant="outline" @click="handlerExample">
+        <t-button variant="outline" @click="handleExample">
           <template #icon>
             <TipsIcon />
           </template>举例
@@ -84,8 +79,8 @@ function newTools() {
     <div v-if="html" class="mt-4" v-html="html" />
   </section>
 
-  <section class="bg-white px-4 pb-4 mb-6 rounded-md shadow hover:shadow-lg transition-shadow duration-500">
-    <div class="h-10 leading-10 pl-2 text-16px font-bold text-gray-500 border-b-1 border-gray-200 mb4">
+  <section class="sfq-card">
+    <div class="sfq-card-title">
       JSON 简介
     </div>
     <div class="leading-6 text-gray-700">

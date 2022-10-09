@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import HomeLinks from '@/components/HomeLinks.vue'
 import JsonFormat from '@/components/json/JsonFormat.vue'
 </script>
