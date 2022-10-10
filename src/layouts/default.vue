@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { routes } from '@/routers'
+import logo from '@/assets/images/logo.svg'
 
 const menus = computed(() => {
   return filterHidden(routes[0].children as Array<RouteRecordRaw>)
@@ -27,11 +28,12 @@ function filterHidden(data: Array<RouteRecordRaw>) {
       <div class="sfq-header">
         <div class="logo">
           <router-link :to="{ name: 'Home' }">
-            <img width="90" src="@/assets/images/logo.png" alt="logo">
+            <img :src="logo" alt="logo">
+            <span>闪·芬奇</span>
           </router-link>
         </div>
         <nav class="menus">
-          <template v-for="(item, index) in menus" :key="index">
+          <div v-for="(item, index) in menus" :key="index">
             <div v-if="item.children" class="menu-group">
               <button>
                 <span>{{ item.meta?.title }}</span>
@@ -48,7 +50,7 @@ function filterHidden(data: Array<RouteRecordRaw>) {
             <router-link v-else :to="{ name: item.name }" class="menu-item">
               {{ item.meta?.title }}
             </router-link>
-          </template>
+          </div>
         </nav>
         <div class="operations">
           <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search" /></a>
@@ -62,7 +64,8 @@ function filterHidden(data: Array<RouteRecordRaw>) {
     </div>
     <!-- footer -->
     <div class="footer">
-      Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved
+      <span>Tips: 本网站部分工具是整合自网上已有工具、开源包等，并全部遵循原有协议发布，著作权归属原作者或团队</span>
+      <span>Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved</span>
     </div>
   </div>
 </template>
@@ -92,7 +95,20 @@ function filterHidden(data: Array<RouteRecordRaw>) {
   align-items: center;
   margin: 0 auto;
   .logo {
-    margin-right: 30px;
+    margin-right: 50px;
+    a {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      display: block;
+      width: 28px;
+      fill: red;
+      margin-right: 8px;
+    }
+    span {
+      font-size: 15px;
+    }
   }
   .menus {
     display: flex;
@@ -159,7 +175,7 @@ function filterHidden(data: Array<RouteRecordRaw>) {
       position: absolute;
       top: calc(var(--nav-height) / 2 + 15px);
       left: 0;
-      opacity: 1;
+      opacity: 0;
       visibility: hidden;
       transform: translateY(-4px);
       transition: opacity .25s, visibility .25s, transform .25s;
@@ -195,10 +211,14 @@ function filterHidden(data: Array<RouteRecordRaw>) {
   margin: 0 auto;
 }
 .footer {
-  height: 56px;
-  line-height: 56px;
+  padding: 16px 0;
+  line-height: 1.8em;
+  font-size: 12px;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
-  background-color: #e7e7e7;
+  border-top: 1px solid var(--border-color-gray);
+  span {
+    display: block;
+  }
 }
 </style>

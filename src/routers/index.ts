@@ -81,6 +81,48 @@ export const routes: Array<RouteRecordRaw> = [
         ],
       },
       {
+        path: '/encrypt',
+        name: 'Encrypt',
+        redirect: '/encrypt/base64',
+        meta: {
+          title: '编码/加密',
+        },
+        children: [
+          {
+            path: 'base64',
+            name: 'Base64',
+            component: () => import('@/pages/format/index.vue'),
+            meta: {
+              title: 'Base64编码/解码',
+            },
+          },
+          {
+            path: 'utf8',
+            name: 'Utf8',
+            component: () => import('@/pages/format/index.vue'),
+            meta: {
+              title: 'UTF-8编码汉字互转',
+            },
+          },
+          {
+            path: 'ascii',
+            name: 'Ascii',
+            component: () => import('@/pages/format/index.vue'),
+            meta: {
+              title: 'ASCii编码汉字互转',
+            },
+          },
+          {
+            path: 'url',
+            name: 'Url',
+            component: () => import('@/pages/format/index.vue'),
+            meta: {
+              title: 'URL编码/解码',
+            },
+          },
+        ],
+      },
+      {
         path: '/doc',
         name: 'Doc',
         redirect: '/doc/http_code',
