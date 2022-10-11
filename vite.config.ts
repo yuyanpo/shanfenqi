@@ -1,6 +1,8 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import Markdown from 'vite-plugin-vue-markdown'
+import prism from 'markdown-it-prism'
 
 // TODO 自动导入 tdesign 按需导入
 // yarn add -D unplugin-vue-components unplugin-auto-import
@@ -19,8 +21,14 @@ export default defineConfig({
     },
   },
   plugins: [
-    Vue(),
-
+    Vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+    Markdown({
+      markdownItUses: [
+        prism,
+      ],
+    }),
     /* AutoImport({
       resolvers: [TDesignResolver({
         library: 'vue-next',
