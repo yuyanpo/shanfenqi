@@ -3,7 +3,9 @@ import About from './about.md'
 </script>
 
 <template>
-  <About />
+  <div class="sfq-card pt-4">
+    <About />
+  </div>
 </template>
 
 <style lang="less">

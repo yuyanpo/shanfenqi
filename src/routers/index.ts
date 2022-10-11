@@ -25,7 +25,7 @@ export const routes: Array<RouteRecordRaw> = [
           {
             path: 'json',
             name: 'JSON',
-            component: () => import('@/pages/format/index.vue'),
+            component: () => import('@/pages/format/json.vue'),
             meta: {
               title: 'JSON格式化',
             },

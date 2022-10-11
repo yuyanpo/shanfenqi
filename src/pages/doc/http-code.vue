@@ -363,7 +363,7 @@ const columns = [
 
 <style lang="less">
 .http-code-wrapper {
-  padding: 20px 0 40px;
+  margin-bottom: 20px;
   .title {
     font-size: 15px;
     font-weight: bold;

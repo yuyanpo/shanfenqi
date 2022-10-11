@@ -11,7 +11,4 @@ import JsonFormat from '@/components/json/JsonFormat.vue'
 </template>
 
 <style lang="less">
-.home {
-  padding: 20px 0 40px;
-}
 </style>

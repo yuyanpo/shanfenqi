@@ -8,6 +8,8 @@ import './assets/theme/theme.css'
 import './assets/styles/main.css'
 import 'uno.css'
 
+import '@/assets/styles/md.css'
+
 import router from './routers'
 import App from './App.vue'
 
