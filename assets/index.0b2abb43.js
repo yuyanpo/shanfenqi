@@ -1,0 +1,1 @@
+import{d as a,H as n,a as o,t as s,u as r,o as u}from"./index.1934c92c.js";const _=a({__name:"index",setup(c){const t=n();return(i,l)=>{var e;return u(),o("div",null,s((e=r(t).meta)==null?void 0:e.title),1)}}});export{_ as default};
