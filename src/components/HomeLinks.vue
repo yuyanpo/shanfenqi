@@ -10,7 +10,7 @@ const links = [
     title: 'Vue中文',
     desc: '一款用于构建 Web 界面，易学易用，性能出色且功能丰富的框架。',
     icon: vueLogo,
-    href: 'https://staging-cn.vuejs.org/',
+    href: 'https://cn.vuejs.org/',
   },
   {
     title: 'Vite',
@@ -42,13 +42,19 @@ const links = [
     icon: tinyPNGLogo,
     href: 'https://tinify.cn/',
   },
+  {
+    title: 'AST explorer',
+    desc: 'AST 在线语法解析，可以选择不同的语言、不同的编译器',
+    icon: LinkIcon,
+    href: 'https://astexplorer.net/',
+  },
 ]
 </script>
 
 <template>
   <section class="sfq-card">
     <div class="sfq-card-title">
-      常用链接
+      🛵 导航
     </div>
     <div class="lists">
       <div class="grid grid-cols-6 gap-4">

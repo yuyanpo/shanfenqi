@@ -64,7 +64,7 @@ function filterHidden(data: Array<RouteRecordRaw>) {
     </div>
     <!-- footer -->
     <div class="footer">
-      <span>Tips: 本站部分工具是整合自网上已有工具、开源包等，并全部遵循原有协议发布，著作权归属原作者或团队</span>
+      <span>Tips: 本站部分工具整合自网上已有工具、开源包等，并全部遵循原有协议发布，著作权归属原作者或团队</span>
       <span>Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved</span>
     </div>
   </div>

@@ -18,7 +18,7 @@ const tips = ref('')
 function handleFormat() {
   resetTips()
   if (!json.value)
-    return MessagePlugin.warning('请输入要格式化的JSON')
+    return MessagePlugin.warning('请输入查看的 JSON 数据')
 
   try {
     html.value = json2HTML(json.value)
@@ -54,7 +54,7 @@ function handleExample() {
       JSON 查看器
     </div>
     <!-- 原 JSON -->
-    <t-textarea v-model="json" class="mb-4" placeholder="请输入要格式化的JSON" :autosize="{ minRows: 3, maxRows: 5 }" :status="status" :tips="tips" />
+    <t-textarea v-model="json" class="mb-4" placeholder="请输入查看的 JSON 数据" :autosize="{ minRows: 3, maxRows: 5 }" :status="status" :tips="tips" />
     <!-- 操作按钮 -->
     <t-row>
       <t-col :span="9">
