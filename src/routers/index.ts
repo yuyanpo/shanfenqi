@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import Default from '@/layouts/default.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import('@/layouts/default.vue'),
+    component: Default,
     children: [
       {
         path: '',
@@ -148,6 +149,7 @@ export const routes: Array<RouteRecordRaw> = [
           title: '关于',
         },
       },
+      { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/components/NotFound.vue') },
     ],
   },
 ]
@@ -158,10 +160,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
+  if (to.meta.title)
     document.title = to.meta.title ? `${to.meta.title} | 闪·芬奇-五彩缤纷的工具箱` : '闪·芬奇-五彩缤纷的工具箱'
-    next()
-  }
+  next()
 })
 
 export default router
