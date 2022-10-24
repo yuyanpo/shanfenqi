@@ -3,7 +3,7 @@ name: Shanfenqi Deploy
 on:
   push:
     branches:
-      - main
+      - github-page
 
 jobs:
   build:
