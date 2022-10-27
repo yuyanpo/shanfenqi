@@ -64,7 +64,7 @@ function handleFormat(flag: boolean) {
 </script>
 
 <template>
-  <div class="json-wrapper">
+  <section class="sfq-base-content json-wrapper">
     <section class="mb-6 rounded-md shadow hover:shadow-lg transition-shadow duration-500 overflow-hidden">
       <!-- 编辑器 -->
       <codemirror
@@ -114,7 +114,7 @@ function handleFormat(flag: boolean) {
         <Description />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="less">

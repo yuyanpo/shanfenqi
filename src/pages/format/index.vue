@@ -4,5 +4,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <div>{{ route.meta?.title }}</div>
+  <div class="sfq-base-content">
+    {{ route.meta?.title }}
+  </div>
 </template>

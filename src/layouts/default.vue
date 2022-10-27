@@ -24,8 +24,8 @@ function filterHidden(data: Array<RouteRecordRaw>) {
 <template>
   <div class="sfq-container">
     <!-- header -->
-    <section class="header-wrapper">
-      <div class="sfq-header">
+    <section class="sfq-header">
+      <div class="sfq-header-inner">
         <div class="logo">
           <router-link :to="{ name: 'Home' }">
             <img :src="logo" alt="logo">
@@ -53,17 +53,14 @@ function filterHidden(data: Array<RouteRecordRaw>) {
           </div>
         </nav>
         <div class="operations">
-          <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search" /></a>
-          <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user" /></a>
+          <span class="text-gray-300 text-sm">This domain name seeks cooperation or sale.</span>
         </div>
       </div>
     </section>
     <!-- content -->
-    <div class="content">
-      <router-view />
-    </div>
+    <router-view />
     <!-- footer -->
-    <div class="footer">
+    <div class="sfq-footer">
       <span>Tips: 本站部分工具整合自网上已有工具、开源包等，并全部遵循原有协议发布，著作权归属原作者或团队</span>
       <span>Copyright @ 2020-{{ new Date().getFullYear() }} 闪·芬奇 All Rights Reserved</span>
     </div>
@@ -71,12 +68,10 @@ function filterHidden(data: Array<RouteRecordRaw>) {
 </template>
 
 <style lang="less">
-@import "@/assets/styles/main.css";
-
 .sfq-container {
   padding-top: var(--nav-height);
 }
-.header-wrapper {
+.sfq-header {
   width: 100%;
   height: var(--nav-height);
   background-color: var(--bg-global);
@@ -88,9 +83,9 @@ function filterHidden(data: Array<RouteRecordRaw>) {
   left: 0;
   z-index: 999;
 }
-.sfq-header {
+.sfq-header-inner {
   display: flex;
-  width: 1200px;
+  width: var(--base-width);
   height: var(--nav-height);
   align-items: center;
   margin: 0 auto;
@@ -194,24 +189,8 @@ function filterHidden(data: Array<RouteRecordRaw>) {
       }
     }
   }
-  .operations {
-    .t-icon {
-      width: 40px;
-      height: 40px;
-      padding: 8px;
-      line-height: 40px;
-    }
-    a:last-child .t-icon {
-      margin-right: 0;
-    }
-  }
 }
-.content {
-  width: 1200px;
-  padding: 20px 0;
-  margin: 0 auto;
-}
-.footer {
+.sfq-footer {
   padding: 16px 0;
   line-height: 1.8em;
   font-size: 12px;

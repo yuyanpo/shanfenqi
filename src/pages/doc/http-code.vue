@@ -346,7 +346,7 @@ const columns = [
 </script>
 
 <template>
-  <section class="http-code-wrapper">
+  <section class="sfq-base-content http-code-wrapper">
     <t-card title="HTTP 协议状态码" :bordered="false" shadow>
       <template v-for="(item, index) in httpCodeDatas" :key="index">
         <div class="title">
