@@ -53,7 +53,7 @@ function filterHidden(data: Array<RouteRecordRaw>) {
           </div>
         </nav>
         <div class="operations">
-          <span class="text-gray-300 text-sm">This domain name seeks cooperation or sale.</span>
+          <span class="text-gray-300 text-sm font-mono">This domain name seeks cooperation or sale.</span>
         </div>
       </div>
     </section>

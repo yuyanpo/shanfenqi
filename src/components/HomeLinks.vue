@@ -43,7 +43,7 @@ const links = [
     href: 'https://tinify.cn/',
   },
   {
-    title: 'AST explorer',
+    title: 'AST Explorer',
     desc: 'AST 在线语法解析，可以选择不同的语言、不同的编译器',
     icon: LinkIcon,
     href: 'https://astexplorer.net/',
@@ -58,7 +58,7 @@ const links = [
     </div>
     <div class="lists">
       <div class="grid grid-cols-6 gap-4">
-        <div v-for="item, idx in links" :key="idx" class="h-20 bg-gray-50 hover:bg-green-50 rounded transition duration-500">
+        <div v-for="item, idx in links" :key="idx" class="h-20 bg-gray-50 hover:bg-green-50 border border-transparent hover:border-green-200 rounded transition duration-500">
           <a class="flex h-full" :href="item.href" target="_blank" rel="noopener noreferrer">
             <img class="w-26px h-26px mx-2 mt-3" :src="item.icon" :alt="item.title">
             <div class="flex-1">
