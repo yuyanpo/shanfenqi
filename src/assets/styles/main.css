@@ -37,6 +37,7 @@ p {
 
 .sfq-base-content {
   width: var(--base-width);
+  min-height: calc(100vh - var(--nav-height) - 77px);
   padding: 20px 0;
   margin: 0 auto;
 }
